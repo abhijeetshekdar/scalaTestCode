@@ -5,7 +5,7 @@ import org.apache.spark.sql.{DataFrame, SparkSession}
 import org.apache.spark.sql.functions.explode
 import org.apache.spark.sql.functions.col
 
-object EnrichJson extends App {
+object ReadJsonObj extends App {
 
   private[this] implicit val spark = SparkSession.builder().master("local[*]").getOrCreate()
   Logger.getLogger("org").setLevel(Level.WARN)
@@ -58,8 +58,8 @@ object EnrichJson extends App {
   convertJson(resultDF)
   /**
     * convertJson : converts the data frame to json string
-    * @param resultDF
     */
+  
   private def convertJson(resultDF: DataFrame) = {
     import org.apache.spark.sql.functions.{collect_list, _}
 
