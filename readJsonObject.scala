@@ -5,7 +5,7 @@ import org.apache.spark.sql.{DataFrame, SparkSession}
 import org.apache.spark.sql.functions.explode
 import org.apache.spark.sql.functions.col
 
-object readJsonObj extends App {
+object ReadJsonObj extends App {
 
   private[this] implicit val spark = SparkSession.builder().master("local[*]").getOrCreate()
   Logger.getLogger("org").setLevel(Level.WARN)
